@@ -1,3 +1,4 @@
 # bme3053c
 Course materials for BME3053C
-\nNoah Horowitz
+
+Noah Horowitz

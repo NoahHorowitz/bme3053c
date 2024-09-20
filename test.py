@@ -12,17 +12,27 @@ txt_3 = ('''0.19 0.25 0.26 0.26 0.28 0.31 0.39 0.42 0.44 0.45
 1.91 1.92 1.92 1.93 1.93 1.93 1.94 1.95 1.98 1.99''')
 txt_x = ('''16 18 22 20 17 25 21 23 24 31 27 28 30 27 28''')
 txt_y = ('''19 17 18 23 20 21 24 18 18 25 29 24 24 23 24''')
-txt= txt_y
-txt = txt.split()
-print(txt)
-for i in range(len(txt)):
-    txt[i] = int(txt[i])
-print(f'Sum:{sum(txt)}')
-print(f'Mean:{sum(txt)/len(txt)}')
-print(f'Mean again:{sts.mean(txt)}')
-stdev = 0
-for num in txt:
-    stdev += (num-sts.mean(txt))**2/(len(txt)-1)
-print(stdev)
-print(f'Std Dev:{sts.stdev(txt)}')
-print(f'Var:{sts.variance(txt)}')
+txt_3 = txt_3.split()
+txt_x=txt_x.split()
+txt_y=txt_y.split()
+for i in range(len(txt_x)):
+    txt_x[i] = int(txt_x[i])
+for i in range(len(txt_y)):
+    txt_y[i] = int(txt_y[i])
+for i in range(len(txt_3)):
+    txt_3[i] = float(txt_3[i])
+
+
+
+
+txt = txt_x
+
+print(f'Sum: {sum(txt)}')
+print(f'Mean: {sum(txt)/len(txt)}')
+print(f'Mean again: {sts.mean(txt)}')
+print(f'Var: {sts.variance(txt)}')
+print(f'Std Dev: {sts.stdev(txt)}')
+print(f'Covariance: {sts.covariance(txt_x,txt_y)}')
+print(f'Coeff of corr: {sts.correlation(txt_x,txt_y)}')
+print(f'Linear regression: {sts.linear_regression(txt_x,txt_y)}')
+
